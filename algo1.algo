@@ -1,0 +1,17 @@
+ALGORITHM InsertionSort
+VAR
+    arr: ARRAY OF INTEGER
+    i, j, currentElement: INTEGER
+BEGIN
+    arr := [12, 11, 13, 5, 6]
+    FOR i FROM 1 TO LENGTH(arr) - 1 DO
+        currentElement := arr[i]
+        j := i - 1
+        WHILE (j >= 0 AND arr[j] > currentElement) DO
+            arr[j + 1] := arr[j]
+            j := j - 1
+        END_WHILE
+        arr[j + 1] := currentElement
+    END_FOR
+Write("Sorted array: ", arr)
+END
